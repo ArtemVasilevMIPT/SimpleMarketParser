@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency analyzer</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div>
+        <form action="/search" method="post" id="date_form">
+            <p>
+                From:
+                <input name="YearFrom" type="text" value={{time_range[0]}} placeholder="YYYY">
+                <input name="MonthFrom" type="text" value={{time_range[1]}} placeholder="MM">
+                <input name="DayFrom" type="text" value={{time_range[2]}} placeholder="DD">
+            </p>
+            <p>
+                To:
+                <input name="YearTo" type="text" value={{time_range[3]}} placeholder="YYYY">
+                <input name="MonthTo" type="text" value={{time_range[4]}} placeholder="MM">
+                <input name="DayTo" type="text" value={{time_range[5]}} placeholder="DD">
+            </p>
+            <p>
+                <button type="submit">Search</button>
+            </p>
+        </form>
+    </div>
+    <div>
+        <table align="center">
+            <caption>Таблица с информацией о криптовалютах</caption>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Market capacity</th>
+                <th>Price</th>
+            </tr>
+            {% for item in cells %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td>{{item[5]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
