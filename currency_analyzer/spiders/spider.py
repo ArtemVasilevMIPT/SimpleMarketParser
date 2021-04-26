@@ -36,13 +36,17 @@ class CurrencySpider(CrawlSpider):
         items_html = sel.xpath('//table//tr')
         items = []
         item_names = items_html.xpath(
-            '//td[@class="cmc-table__cell cmc-table__cell--sticky cmc-table__cell--sortable cmc-table__cell--left cmc-table__cell--sort-by__name"]//div//a/text()').extract()
+            '//td[@class="cmc-table__cell cmc-table__cell--sticky cmc-table__cell--sortable ' +
+            'cmc-table__cell--left cmc-table__cell--sort-by__name"]//div//a/text()').extract()
         item_symbols = items_html.xpath(
-            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--left cmc-table__cell--sort-by__symbol"]//div/text()').extract()
+            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--left ' +
+            'cmc-table__cell--sort-by__symbol"]//div/text()').extract()
         item_caps = items_html.xpath(
-            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right cmc-table__cell--sort-by__market-cap"]//p/text()').extract()
+            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right ' +
+            'cmc-table__cell--sort-by__market-cap"]//p/text()').extract()
         item_prices = items_html.xpath(
-            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right cmc-table__cell--sort-by__price"]//a/text()').extract()
+            '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right ' +
+            'cmc-table__cell--sort-by__price"]//a/text()').extract()
         for i in range(min(self.items_number, len(item_names))):
             item = CurrencyAnalyzerItem()
             item['date'] = response.request.url.split('/')[-2]
