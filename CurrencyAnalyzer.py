@@ -12,17 +12,18 @@ def get_closest_date(d):
     cd = c.monthdatescalendar(d.year, d.month)
     dt = None
     for week in cd:
-        if week[6].day > d.day:
+        if week[6].day >= d.day:
             dt = week[6]
             break
     if not dt:
         m = d.month + 1
+        day = 1
         if m > 12:
             cd = c.monthdatescalendar(d.year + 1, 1)
         else:
             cd = c.monthdatescalendar(d.year, m)
         for week in cd:
-            if week[6].day > d.day:
+            if week[6].day >= day:
                 dt = week[6]
                 break
     return dt
