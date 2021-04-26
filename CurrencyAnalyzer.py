@@ -1,46 +1,44 @@
 import sqlite3
 import pandas as pd
-from currency_analyzer.currency_analyzer.spiders import spider
-from twisted.internet import reactor
-from scrapy.crawler import CrawlerRunner
+from currency_analyzer.spiders import spider
 from flask import render_template
 import datetime
 import calendar
-from scrapy.utils.log import configure_logging
-import itertools
+from update_database import update_database
 
 
-def generate_regex(date_from, date_to, ex_dates):
+def get_closest_date(d):
+    c = calendar.Calendar()
+    cd = c.monthdatescalendar(d.year, d.month)
+    dt = None
+    for week in cd:
+        if week[6].day > d.day:
+            dt = week[6]
+            break
+    if not dt:
+        m = d.month + 1
+        if m > 12:
+            cd = c.monthdatescalendar(d.year + 1, 1)
+        else:
+            cd = c.monthdatescalendar(d.year, m)
+        for week in cd:
+            if week[6].day > d.day:
+                dt = week[6]
+                break
+    return dt
+
+
+def generate_regex(date_from, ex_dates):
     try:
-        d_f = datetime.date(int(date_from[0]), int(date_from[1]), int(date_from[2]))
-        d_t = datetime.date(int(date_to[0]), int(date_to[1]), int(date_to[2]))
+        d = datetime.date(int(date_from[0]), int(date_from[1]), int(date_from[2]))
     except ValueError:
         return ""
-    r = ""
-    while d_f <= d_t:
-        c = calendar.Calendar()
-        cd = c.monthdatescalendar(d_f.year, d_f.month)
-        day = d_f.day
-        for week in cd:
-            dt = week[6]
-            if dt.day > d_t.day and d_f.month == d_t.month and d_f.year == d_t.year:
-                break
-            if dt.day < day:
-                continue
-            if not dt.strftime("%Y%m%d") in ex_dates:
-                r += dt.strftime("%Y%m%d")
-                r += "|"
-                ex_dates += dt.strftime("%Y%m%d")
-            day = dt.day
-        year = d_f.year + (d_f.month + 1) // 13
-        month = (d_f.month + 1) % 13
-        if month == 0:
-            month = 1
-        d_f = datetime.date(year, month, 1)
-    if len(r) != 0:
-        if r[-1] == "|":
-            r = r[:len(r) - 1]
-    return r
+    dt = get_closest_date(d)
+    if dt.strftime("%Y%m%d") in ex_dates:
+        return ""
+    else:
+        ex_dates += [dt.strftime("%Y%m%d")]
+        return dt.strftime("%Y%m%d")
 
 
 def set_search_date(regex):
@@ -81,13 +79,8 @@ def render_query(db, q, dates):
 
 def connect_database():
     """returns a connection to a database"""
-    try:
-        c = sqlite3.connect('./currency_analyzer/currency_analyzer/currency.sqlite')
-        return c
-    except Exception:
-        db = open('./currency_analyzer/currency_analyzer/currency.sqlite', "w")
-        db.close()
-        return sqlite3.connect('./currency_analyzer/currency_analyzer/currency.sqlite')
+    c = sqlite3.connect('currency.sqlite')
+    return c
 
 
 def init_database(con):
@@ -99,20 +92,10 @@ def init_database(con):
 
 def init_dates(con):
     df = query_pandas(con)
-    print(df.head())
-    return df.date.unique()
-
-
-def update_database():
-    """parses a webpage and updates a database"""
-    try:
-        configure_logging({'LOG_FORMAT': '%(levelname)s: %(message)s'})
-        runner = CrawlerRunner()
-        d = runner.crawl(spider.CurrencySpider)
-        d.addBoth(lambda _: reactor.stop())
-        reactor.run()
-    except ValueError:
-        pass
+    res = df.date.unique()
+    for i in range(len(res)):
+        res[i] = ''.join(res[i].split('-'))
+    return res
 
 
 def check_date(date):
@@ -128,14 +111,16 @@ def generate_query(time_period, ex_date):
     """Generates query, according to the give time period"""
     r = ""
     q = ""
-    if check_date(time_period[:3]) and check_date(time_period[3:]):
-        r = generate_regex(time_period[:3], time_period[3:], ex_date)
+    if check_date(time_period):
+        r = generate_regex(time_period, ex_date)
     else:
         return ""
     if r != "":
         set_search_date(r)
         update_database()
-    s_f = time_period[0] + '-' + time_period[1] + '-' + time_period[2]
-    s_t = time_period[3] + '-' + time_period[4] + '-' + time_period[5]
-    q = "SELECT * FROM currency WHERE [date] BETWEEN '" + s_f + "' AND '" + s_t + "'"
+    s_f = get_closest_date(datetime.date(int(time_period[0]), int(time_period[1]), int(time_period[2])))
+    s = "'"
+    s += s_f.strftime('%Y-%m-%d')
+    s += "'"
+    q = "SELECT * FROM currency WHERE [date] == " + s
     return q

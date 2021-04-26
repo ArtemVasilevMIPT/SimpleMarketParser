@@ -1,7 +1,6 @@
 from flask import Flask, send_from_directory, request, redirect
 import os
-from CurrencyAnalyzer import *
-
+from CurrencyAnalyzer import render_query, init_dates, init_database, generate_query
 
 app = Flask(__name__)
 
@@ -10,9 +9,9 @@ connection = None
 # Current query
 query = ""
 # Dates to search
-time_range = ['2020', '01', '07', '2021', '01', '03']
+time_range = ['2020', '01', '07']
 # Dates that exist in database
-existing_dates = None
+existing_dates = []
 
 
 @app.route('/favicon.ico')
@@ -42,12 +41,9 @@ def search():
     time_range[0] = request.form['YearFrom']
     time_range[1] = request.form['MonthFrom']
     time_range[2] = request.form['DayFrom']
-    time_range[3] = request.form['YearTo']
-    time_range[4] = request.form['MonthTo']
-    time_range[5] = request.form['DayTo']
     if not connection:
         connection = init_database(connection)
-    if not existing_dates:
+    if len(existing_dates) == 0:
         existing_dates = init_dates(connection)
     query = generate_query(time_range, existing_dates)
     return redirect('/')

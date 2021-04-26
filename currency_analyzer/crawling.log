@@ -1,0 +1,2232 @@
+2021-04-24 21:04:23 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: currency_analyzer)
+2021-04-24 21:04:23 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.5 (default, Jan 27 2021, 15:41:15) - [GCC 9.3.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Linux-5.8.0-50-generic-x86_64-with-glibc2.29
+2021-04-24 21:04:23 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-04-24 21:04:23 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'BOT_NAME': 'currency_analyzer',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_IP': 16,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 20,
+ 'LOG_FILE': 'crawling.log',
+ 'NEWSPIDER_MODULE': 'currency_analyzer.spiders',
+ 'SPIDER_MODULES': ['currency_analyzer.spiders'],
+ 'USER_AGENT': 'currency_analyzer'}
+2021-04-24 21:04:23 [scrapy.extensions.telnet] INFO: Telnet Password: 3323f7d50b9e0101
+2021-04-24 21:04:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2021-04-24 21:04:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-04-24 21:04:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-04-24 21:04:23 [twisted] CRITICAL: Unhandled error in Deferred:
+2021-04-24 21:04:23 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/twisted/internet/defer.py", line 1445, in _inlineCallbacks
+    result = current_context.run(g.send, result)
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/crawler.py", line 87, in crawl
+    self.engine = self._create_engine()
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/crawler.py", line 101, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/core/engine.py", line 70, in __init__
+    self.scraper = Scraper(crawler)
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/core/scraper.py", line 71, in __init__
+    self.itemproc = itemproc_cls.from_crawler(crawler)
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/middleware.py", line 35, in from_settings
+    mw = create_instance(mwcls, settings, crawler)
+  File "/home/marcille/mipt/python/CurrencyAnalizer/venv/lib/python3.8/site-packages/scrapy/utils/misc.py", line 172, in create_instance
+    instance = objcls(*args, **kwargs)
+TypeError: __init__() missing 1 required positional argument: 'settings'
+2021-04-24 21:06:00 [scrapy.utils.log] INFO: Scrapy 2.5.0 started (bot: currency_analyzer)
+2021-04-24 21:06:00 [scrapy.utils.log] INFO: Versions: lxml 4.6.3.0, libxml2 2.9.10, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 21.2.0, Python 3.8.5 (default, Jan 27 2021, 15:41:15) - [GCC 9.3.0], pyOpenSSL 20.0.1 (OpenSSL 1.1.1k  25 Mar 2021), cryptography 3.4.7, Platform Linux-5.8.0-50-generic-x86_64-with-glibc2.29
+2021-04-24 21:06:00 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+2021-04-24 21:06:00 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'BOT_NAME': 'currency_analyzer',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_IP': 16,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 20,
+ 'LOG_FILE': 'crawling.log',
+ 'NEWSPIDER_MODULE': 'currency_analyzer.spiders',
+ 'SPIDER_MODULES': ['currency_analyzer.spiders'],
+ 'USER_AGENT': 'currency_analyzer'}
+2021-04-24 21:06:00 [scrapy.extensions.telnet] INFO: Telnet Password: ea1821c04f34c1b7
+2021-04-24 21:06:00 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2021-04-24 21:06:00 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2021-04-24 21:06:00 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2021-04-24 21:06:01 [scrapy.middleware] INFO: Enabled item pipelines:
+['currency_analyzer.pipelines.CurrencyAnalyzerPipeline']
+2021-04-24 21:06:01 [scrapy.core.engine] INFO: Spider opened
+2021-04-24 21:06:01 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2021-04-24 21:06:01 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2021-04-24 21:06:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coinmarketcap.com/historical/> (referer: None)
+2021-04-24 21:06:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coinmarketcap.com/historical/20210404/> (referer: https://coinmarketcap.com/)
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(701, BTC, $1,097,232,660,348)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,097,232,660,348',
+ 'name': 'Bitcoin',
+ 'price': '$58,758.56',
+ 'symbol': 'BTC'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(702, ETH, $241,411,837,678)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$241,411,837,678',
+ 'name': 'Ethereum',
+ 'price': '$2,093.12',
+ 'symbol': 'ETH'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(703, BNB, $54,337,497,318)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$54,337,497,318',
+ 'name': 'Binance Coin',
+ 'price': '$351.62',
+ 'symbol': 'BNB'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(704, USDT, $42,503,862,984)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$42,503,862,984',
+ 'name': 'Tether',
+ 'price': '$1.00',
+ 'symbol': 'USDT'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(705, DOT, $41,344,587,412)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$41,344,587,412',
+ 'name': 'Polkadot',
+ 'price': '$44.65',
+ 'symbol': 'DOT'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(706, ADA, $38,063,850,601)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$38,063,850,601',
+ 'name': 'Cardano',
+ 'price': '$1.19',
+ 'symbol': 'ADA'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(707, XRP, $29,364,108,461)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$29,364,108,461',
+ 'name': 'XRP',
+ 'price': '$0.6467',
+ 'symbol': 'XRP'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(708, UNI, $16,219,657,547)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$16,219,657,547',
+ 'name': 'Uniswap',
+ 'price': '$31.07',
+ 'symbol': 'UNI'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(709, LTC, $13,620,356,609)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$13,620,356,609',
+ 'name': 'Litecoin',
+ 'price': '$204.04',
+ 'symbol': 'LTC'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(710, LINK, $12,924,960,736)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$12,924,960,736',
+ 'name': 'Chainlink',
+ 'price': '$30.96',
+ 'symbol': 'LINK'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(711, THETA, $11,919,862,125)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$11,919,862,125',
+ 'name': 'THETA',
+ 'price': '$11.92',
+ 'symbol': 'THETA'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(712, FIL, $11,811,924,426)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$11,811,924,426',
+ 'name': 'Filecoin',
+ 'price': '$183.78',
+ 'symbol': 'FIL'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(713, BTT, $10,570,070,645)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$10,570,070,645',
+ 'name': 'BitTorrent',
+ 'price': '$0.01068',
+ 'symbol': 'BTT'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(714, USDC, $10,884,944,736)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$10,884,944,736',
+ 'name': 'USD Coin',
+ 'price': '$1.00',
+ 'symbol': 'USDC'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(715, BCH, $10,593,146,374)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$10,593,146,374',
+ 'name': 'Bitcoin Cash',
+ 'price': '$566.51',
+ 'symbol': 'BCH'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(716, XLM, $9,958,214,739)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$9,958,214,739',
+ 'name': 'Stellar',
+ 'price': '$0.4378',
+ 'symbol': 'XLM'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(717, TRX, $9,270,853,015)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$9,270,853,015',
+ 'name': 'TRON',
+ 'price': '$0.1294',
+ 'symbol': 'TRX'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(718, KLAY, $9,340,697,542)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$9,340,697,542',
+ 'name': 'Klaytn',
+ 'price': '$3.82',
+ 'symbol': 'KLAY'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(719, WBTC, $8,238,238,576)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$8,238,238,576',
+ 'name': 'Wrapped Bitcoin',
+ 'price': '$58,592.26',
+ 'symbol': 'WBTC'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(720, DOGE, $7,407,664,648)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$7,407,664,648',
+ 'name': 'Dogecoin',
+ 'price': '$0.0574',
+ 'symbol': 'DOGE'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(721, LUNA, $7,102,631,450)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$7,102,631,450',
+ 'name': 'Terra',
+ 'price': '$18.35',
+ 'symbol': 'LUNA'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(722, SOL, $6,455,269,614)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$6,455,269,614',
+ 'name': 'Solana',
+ 'price': '$24.06',
+ 'symbol': 'SOL'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(723, VET, $6,051,245,511)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$6,051,245,511',
+ 'name': 'VeChain',
+ 'price': '$0.09409',
+ 'symbol': 'VET'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(724, EOS, $6,045,362,056)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$6,045,362,056',
+ 'name': 'EOS',
+ 'price': '$6.35',
+ 'symbol': 'EOS'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(725, CRO, $5,789,300,540)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$5,789,300,540',
+ 'name': 'Crypto.com Coin',
+ 'price': '$0.2292',
+ 'symbol': 'CRO'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(726, AAVE, $5,042,122,935)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$5,042,122,935',
+ 'name': 'Aave',
+ 'price': '$404.31',
+ 'symbol': 'AAVE'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(727, XMR, $4,684,165,062)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,684,165,062',
+ 'name': 'Monero',
+ 'price': '$261.99',
+ 'symbol': 'XMR'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(728, HOT, $4,745,531,946)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,745,531,946',
+ 'name': 'Holo',
+ 'price': '$0.02805',
+ 'symbol': 'HOT'}
+2021-04-24 21:06:08 [currency_analyzer.pipelines] INFO: Item <Currency(729, ATOM, $4,608,467,479)> stored in db
+2021-04-24 21:06:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,608,467,479',
+ 'name': 'Cosmos',
+ 'price': '$21.74',
+ 'symbol': 'ATOM'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(730, MIOTA, $4,469,112,265)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,469,112,265',
+ 'name': 'IOTA',
+ 'price': '$1.61',
+ 'symbol': 'MIOTA'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(731, BSV, $4,305,450,453)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,305,450,453',
+ 'name': 'Bitcoin SV',
+ 'price': '$230.28',
+ 'symbol': 'BSV'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(732, BUSD, $4,037,259,243)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$4,037,259,243',
+ 'name': 'Binance USD',
+ 'price': '$1.00',
+ 'symbol': 'BUSD'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(733, XTZ, $3,981,103,744)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,981,103,744',
+ 'name': 'Tezos',
+ 'price': '$5.20',
+ 'symbol': 'XTZ'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(734, FTT, $3,920,957,543)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,920,957,543',
+ 'name': 'FTX Token',
+ 'price': '$41.56',
+ 'symbol': 'FTT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(735, NEO, $3,861,000,517)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,861,000,517',
+ 'name': 'Neo',
+ 'price': '$54.74',
+ 'symbol': 'NEO'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(736, KSM, $3,800,380,670)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,800,380,670',
+ 'name': 'Kusama',
+ 'price': '$448.68',
+ 'symbol': 'KSM'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(737, AVAX, $3,755,051,237)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,755,051,237',
+ 'name': 'Avalanche',
+ 'price': '$29.33',
+ 'symbol': 'AVAX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(738, XEM, $3,746,134,848)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,746,134,848',
+ 'name': 'NEM',
+ 'price': '$0.4162',
+ 'symbol': 'XEM'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(739, ALGO, $3,443,490,562)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,443,490,562',
+ 'name': 'Algorand',
+ 'price': '$1.31',
+ 'symbol': 'ALGO'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(740, DAI, $3,206,103,303)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,206,103,303',
+ 'name': 'Dai',
+ 'price': '$1.01',
+ 'symbol': 'DAI'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(741, HT, $3,004,362,746)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$3,004,362,746',
+ 'name': 'Huobi Token',
+ 'price': '$16.43',
+ 'symbol': 'HT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(742, EGLD, $2,909,860,750)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,909,860,750',
+ 'name': 'Elrond',
+ 'price': '$168.69',
+ 'symbol': 'EGLD'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(743, CHZ, $2,796,364,389)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,796,364,389',
+ 'name': 'Chiliz',
+ 'price': '$0.5006',
+ 'symbol': 'CHZ'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(744, COMP, $2,789,520,771)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,789,520,771',
+ 'name': 'Compound',
+ 'price': '$552.18',
+ 'symbol': 'COMP'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(745, DASH, $2,740,128,053)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,740,128,053',
+ 'name': 'Dash',
+ 'price': '$272.31',
+ 'symbol': 'DASH'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(746, HBAR, $2,636,848,089)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,636,848,089',
+ 'name': 'Hedera Hashgraph',
+ 'price': '$0.3331',
+ 'symbol': 'HBAR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(747, CAKE, $2,516,534,162)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,516,534,162',
+ 'name': 'PancakeSwap',
+ 'price': '$16.86',
+ 'symbol': 'CAKE'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(748, ZIL, $2,468,779,008)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,468,779,008',
+ 'name': 'Zilliqa',
+ 'price': '$0.2218',
+ 'symbol': 'ZIL'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(749, RUNE, $2,408,567,750)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,408,567,750',
+ 'name': 'THORChain',
+ 'price': '$10.39',
+ 'symbol': 'RUNE'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(750, DCR, $2,394,449,666)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,394,449,666',
+ 'name': 'Decred',
+ 'price': '$187.29',
+ 'symbol': 'DCR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(751, SNX, $2,388,814,054)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,388,814,054',
+ 'name': 'Synthetix',
+ 'price': '$20.80',
+ 'symbol': 'SNX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(752, BTCB, $2,340,663,639)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,340,663,639',
+ 'name': 'Bitcoin BEP2',
+ 'price': '$58,636.78',
+ 'symbol': 'BTCB'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(753, MKR, $2,297,031,463)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,297,031,463',
+ 'name': 'Maker',
+ 'price': '$2,308.02',
+ 'symbol': 'MKR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(754, GRT, $2,201,818,030)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,201,818,030',
+ 'name': 'The Graph',
+ 'price': '$1.77',
+ 'symbol': 'GRT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(755, TFUEL, $2,173,317,745)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,173,317,745',
+ 'name': 'Theta Fuel',
+ 'price': '$0.4123',
+ 'symbol': 'TFUEL'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(756, ZEC, $2,168,607,743)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,168,607,743',
+ 'name': 'Zcash',
+ 'price': '$188.84',
+ 'symbol': 'ZEC'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(757, ENJ, $2,079,108,085)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,079,108,085',
+ 'name': 'Enjin Coin',
+ 'price': '$2.49',
+ 'symbol': 'ENJ'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(758, NEAR, $2,068,008,242)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,068,008,242',
+ 'name': 'NEAR Protocol',
+ 'price': '$6.10',
+ 'symbol': 'NEAR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(759, LEO, $2,016,754,742)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$2,016,754,742',
+ 'name': 'UNUS SED LEO',
+ 'price': '$2.02',
+ 'symbol': 'LEO'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(760, SUSHI, $1,949,566,384)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,949,566,384',
+ 'name': 'SushiSwap',
+ 'price': '$15.32',
+ 'symbol': 'SUSHI'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(761, MATIC, $1,817,266,052)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,817,266,052',
+ 'name': 'Polygon',
+ 'price': '$0.3626',
+ 'symbol': 'MATIC'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(762, BAT, $1,769,670,651)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,769,670,651',
+ 'name': 'Basic Attention Token',
+ 'price': '$1.19',
+ 'symbol': 'BAT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(763, NPXS, $1,707,229,976)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,707,229,976',
+ 'name': 'Pundi X[old]',
+ 'price': '$0.007211',
+ 'symbol': 'NPXS'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(764, ETC, $1,700,176,278)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,700,176,278',
+ 'name': 'Ethereum Classic',
+ 'price': '$14.62',
+ 'symbol': 'ETC'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(765, UST, $1,684,654,591)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,684,654,591',
+ 'name': 'TerraUSD',
+ 'price': '$1.00',
+ 'symbol': 'UST'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(766, DENT, $1,634,255,910)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,634,255,910',
+ 'name': 'Dent',
+ 'price': '$0.01744',
+ 'symbol': 'DENT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(767, MANA, $1,604,675,660)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,604,675,660',
+ 'name': 'Decentraland',
+ 'price': '$1.02',
+ 'symbol': 'MANA'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(768, ICX, $1,595,550,073)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,595,550,073',
+ 'name': 'ICON',
+ 'price': '$2.68',
+ 'symbol': 'ICX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(769, RVN, $1,592,063,515)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,592,063,515',
+ 'name': 'Ravencoin',
+ 'price': '$0.1876',
+ 'symbol': 'RVN'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(770, NEXO, $1,551,779,662)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,551,779,662',
+ 'name': 'Nexo',
+ 'price': '$2.77',
+ 'symbol': 'NEXO'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(771, UMA, $1,539,153,332)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,539,153,332',
+ 'name': 'UMA',
+ 'price': '$25.64',
+ 'symbol': 'UMA'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(772, ONE, $1,496,066,637)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,496,066,637',
+ 'name': 'Harmony',
+ 'price': '$0.1593',
+ 'symbol': 'ONE'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(773, SC, $1,440,060,323)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,440,060,323',
+ 'name': 'Siacoin',
+ 'price': '$0.03041',
+ 'symbol': 'SC'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(774, CEL, $1,432,699,071)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,432,699,071',
+ 'name': 'Celsius',
+ 'price': '$6.00',
+ 'symbol': 'CEL'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(775, ONT, $1,428,471,498)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,428,471,498',
+ 'name': 'Ontology',
+ 'price': '$1.77',
+ 'symbol': 'ONT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(776, ZRX, $1,429,017,530)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,429,017,530',
+ 'name': '0x',
+ 'price': '$1.88',
+ 'symbol': 'ZRX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(777, YFI, $1,387,631,625)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,387,631,625',
+ 'name': 'yearn.finance',
+ 'price': '$37,877.27',
+ 'symbol': 'YFI'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(778, BNT, $1,326,794,100)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,326,794,100',
+ 'name': 'Bancor',
+ 'price': '$7.63',
+ 'symbol': 'BNT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(779, DGB, $1,300,060,862)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,300,060,862',
+ 'name': 'DigiByte',
+ 'price': '$0.09163',
+ 'symbol': 'DGB'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(780, WAVES, $1,305,022,799)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,305,022,799',
+ 'name': 'Waves',
+ 'price': '$12.46',
+ 'symbol': 'WAVES'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(781, HNT, $1,290,682,824)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,290,682,824',
+ 'name': 'Helium',
+ 'price': '$16.73',
+ 'symbol': 'HNT'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(782, STX, $1,261,525,770)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,261,525,770',
+ 'name': 'Stacks',
+ 'price': '$1.16',
+ 'symbol': 'STX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(783, ANKR, $1,182,943,806)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,182,943,806',
+ 'name': 'Ankr',
+ 'price': '$0.1691',
+ 'symbol': 'ANKR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(784, RSR, $1,164,061,701)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,164,061,701',
+ 'name': 'Reserve Rights',
+ 'price': '$0.08845',
+ 'symbol': 'RSR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(785, OMG, $1,119,722,449)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,119,722,449',
+ 'name': 'OMG Network',
+ 'price': '$7.98',
+ 'symbol': 'OMG'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(786, CHSB, $1,127,973,906)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,127,973,906',
+ 'name': 'SwissBorg',
+ 'price': '$1.13',
+ 'symbol': 'CHSB'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(787, REN, $1,080,980,239)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,080,980,239',
+ 'name': 'Ren',
+ 'price': '$1.09',
+ 'symbol': 'REN'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(788, QTUM, $1,076,666,511)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,076,666,511',
+ 'name': 'Qtum',
+ 'price': '$10.96',
+ 'symbol': 'QTUM'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(789, REV, $1,067,052,133)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,067,052,133',
+ 'name': 'Revain',
+ 'price': '$0.01254',
+ 'symbol': 'REV'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(790, FLOW, $1,058,160,351)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,058,160,351',
+ 'name': 'Flow',
+ 'price': '$34.77',
+ 'symbol': 'FLOW'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(791, FTM, $1,043,450,843)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,043,450,843',
+ 'name': 'Fantom',
+ 'price': '$0.41',
+ 'symbol': 'FTM'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(792, OKB, $1,015,554,710)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,015,554,710',
+ 'name': 'OKB',
+ 'price': '$16.93',
+ 'symbol': 'OKB'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(793, BTMX, $1,012,637,033)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$1,012,637,033',
+ 'name': 'BTMX',
+ 'price': '$1.35',
+ 'symbol': 'BTMX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(794, PAX, $988,478,397)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$988,478,397',
+ 'name': 'Paxos Standard',
+ 'price': '$1.00',
+ 'symbol': 'PAX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(795, WRX, $957,148,048)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$957,148,048',
+ 'name': 'WazirX',
+ 'price': '$4.03',
+ 'symbol': 'WRX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(796, AR, $911,166,311)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$911,166,311',
+ 'name': 'Arweave',
+ 'price': '$27.28',
+ 'symbol': 'AR'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(797, CELO, $909,325,491)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$909,325,491',
+ 'name': 'Celo',
+ 'price': '$4.44',
+ 'symbol': 'CELO'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(798, VGX, $901,534,652)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$901,534,652',
+ 'name': 'Voyager Token',
+ 'price': '$4.06',
+ 'symbol': 'VGX'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(799, CKB, $892,842,210)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$892,842,210',
+ 'name': 'Nervos Network',
+ 'price': '$0.03636',
+ 'symbol': 'CKB'}
+2021-04-24 21:06:09 [currency_analyzer.pipelines] INFO: Item <Currency(800, IOST, $873,017,084)> stored in db
+2021-04-24 21:06:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210404/>
+{'date': '20210404',
+ 'market_cap': '$873,017,084',
+ 'name': 'IOST',
+ 'price': '$0.05332',
+ 'symbol': 'IOST'}
+2021-04-24 21:06:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coinmarketcap.com/historical/20210418/> (referer: https://coinmarketcap.com/)
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(801, BTC, $1,050,445,401,610)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,050,445,401,610',
+ 'name': 'Bitcoin',
+ 'price': '$56,216.19',
+ 'symbol': 'BTC'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(802, ETH, $258,444,691,650)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$258,444,691,650',
+ 'name': 'Ethereum',
+ 'price': '$2,237.14',
+ 'symbol': 'ETH'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(803, BNB, $73,806,479,141)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$73,806,479,141',
+ 'name': 'Binance Coin',
+ 'price': '$481.03',
+ 'symbol': 'BNB'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(804, XRP, $63,837,977,820)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$63,837,977,820',
+ 'name': 'XRP',
+ 'price': '$1.41',
+ 'symbol': 'XRP'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(805, USDT, $48,080,200,312)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$48,080,200,312',
+ 'name': 'Tether',
+ 'price': '$1.00',
+ 'symbol': 'USDT'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(806, DOGE, $41,417,581,076)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$41,417,581,076',
+ 'name': 'Dogecoin',
+ 'price': '$0.3205',
+ 'symbol': 'DOGE'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(807, ADA, $40,750,096,835)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$40,750,096,835',
+ 'name': 'Cardano',
+ 'price': '$1.28',
+ 'symbol': 'ADA'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(808, DOT, $34,770,061,976)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$34,770,061,976',
+ 'name': 'Polkadot',
+ 'price': '$37.35',
+ 'symbol': 'DOT'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(809, LTC, $18,230,006,101)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$18,230,006,101',
+ 'name': 'Litecoin',
+ 'price': '$273.10',
+ 'symbol': 'LTC'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(810, BCH, $18,070,348,498)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$18,070,348,498',
+ 'name': 'Bitcoin Cash',
+ 'price': '$965.68',
+ 'symbol': 'BCH'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(811, UNI, $16,615,561,412)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$16,615,561,412',
+ 'name': 'Uniswap',
+ 'price': '$31.75',
+ 'symbol': 'UNI'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(812, LINK, $16,368,990,662)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$16,368,990,662',
+ 'name': 'Chainlink',
+ 'price': '$39.07',
+ 'symbol': 'LINK'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(813, VET, $16,376,826,084)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$16,376,826,084',
+ 'name': 'VeChain',
+ 'price': '$0.2546',
+ 'symbol': 'VET'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(814, XLM, $12,464,478,375)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$12,464,478,375',
+ 'name': 'Stellar',
+ 'price': '$0.5447',
+ 'symbol': 'XLM'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(815, THETA, $11,756,942,464)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$11,756,942,464',
+ 'name': 'THETA',
+ 'price': '$11.76',
+ 'symbol': 'THETA'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(816, USDC, $11,308,018,713)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$11,308,018,713',
+ 'name': 'USD Coin',
+ 'price': '$1.00',
+ 'symbol': 'USDC'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(817, FIL, $10,529,339,985)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$10,529,339,985',
+ 'name': 'Filecoin',
+ 'price': '$156.31',
+ 'symbol': 'FIL'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(818, TRX, $10,238,638,366)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$10,238,638,366',
+ 'name': 'TRON',
+ 'price': '$0.1429',
+ 'symbol': 'TRX'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(819, SOL, $8,722,397,355)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$8,722,397,355',
+ 'name': 'Solana',
+ 'price': '$32.30',
+ 'symbol': 'SOL'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(820, WBTC, $8,630,162,231)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$8,630,162,231',
+ 'name': 'Wrapped Bitcoin',
+ 'price': '$56,190.56',
+ 'symbol': 'WBTC'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(821, NEO, $8,327,725,943)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$8,327,725,943',
+ 'name': 'Neo',
+ 'price': '$118.06',
+ 'symbol': 'NEO'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(822, EOS, $6,899,955,100)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$6,899,955,100',
+ 'name': 'EOS',
+ 'price': '$7.24',
+ 'symbol': 'EOS'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(823, MIOTA, $6,614,639,094)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$6,614,639,094',
+ 'name': 'IOTA',
+ 'price': '$2.38',
+ 'symbol': 'MIOTA'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(824, BSV, $6,227,297,518)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$6,227,297,518',
+ 'name': 'Bitcoin SV',
+ 'price': '$332.85',
+ 'symbol': 'BSV'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(825, KLAY, $6,119,657,914)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$6,119,657,914',
+ 'name': 'Klaytn',
+ 'price': '$2.49',
+ 'symbol': 'KLAY'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(826, XMR, $6,042,975,684)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$6,042,975,684',
+ 'name': 'Monero',
+ 'price': '$337.79',
+ 'symbol': 'XMR'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(827, BUSD, $5,403,164,927)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$5,403,164,927',
+ 'name': 'Binance USD',
+ 'price': '$1.00',
+ 'symbol': 'BUSD'}
+2021-04-24 21:06:35 [currency_analyzer.pipelines] INFO: Item <Currency(828, BTT, $5,293,286,970)> stored in db
+2021-04-24 21:06:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$5,293,286,970',
+ 'name': 'BitTorrent',
+ 'price': '$0.008021',
+ 'symbol': 'BTT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(829, CRO, $5,218,088,711)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$5,218,088,711',
+ 'name': 'Crypto.com Coin',
+ 'price': '$0.2066',
+ 'symbol': 'CRO'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(830, LUNA, $5,085,163,470)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$5,085,163,470',
+ 'name': 'Terra',
+ 'price': '$13.40',
+ 'symbol': 'LUNA'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(831, FTT, $4,735,830,236)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,735,830,236',
+ 'name': 'FTX Token',
+ 'price': '$50.20',
+ 'symbol': 'FTT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(832, AAVE, $4,771,434,820)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,771,434,820',
+ 'name': 'Aave',
+ 'price': '$382.08',
+ 'symbol': 'AAVE'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(833, XTZ, $4,728,319,344)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,728,319,344',
+ 'name': 'Tezos',
+ 'price': '$6.17',
+ 'symbol': 'XTZ'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(834, ATOM, $4,504,065,315)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,504,065,315',
+ 'name': 'Cosmos',
+ 'price': '$21.38',
+ 'symbol': 'ATOM'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(835, ETC, $4,304,535,953)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,304,535,953',
+ 'name': 'Ethereum Classic',
+ 'price': '$37.01',
+ 'symbol': 'ETC'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(836, ALGO, $4,148,352,107)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$4,148,352,107',
+ 'name': 'Algorand',
+ 'price': '$1.45',
+ 'symbol': 'ALGO'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(837, RUNE, $3,859,074,233)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,859,074,233',
+ 'name': 'THORChain',
+ 'price': '$16.60',
+ 'symbol': 'RUNE'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(838, AVAX, $3,762,224,753)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,762,224,753',
+ 'name': 'Avalanche',
+ 'price': '$29.25',
+ 'symbol': 'AVAX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(839, XEM, $3,632,923,849)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,632,923,849',
+ 'name': 'NEM',
+ 'price': '$0.4037',
+ 'symbol': 'XEM'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(840, DAI, $3,559,846,719)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,559,846,719',
+ 'name': 'Dai',
+ 'price': '$0.9992',
+ 'symbol': 'DAI'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(841, CAKE, $3,484,203,437)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,484,203,437',
+ 'name': 'PancakeSwap',
+ 'price': '$22.19',
+ 'symbol': 'CAKE'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(842, KSM, $3,442,690,217)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,442,690,217',
+ 'name': 'Kusama',
+ 'price': '$406.45',
+ 'symbol': 'KSM'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(843, EGLD, $3,285,890,049)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,285,890,049',
+ 'name': 'Elrond',
+ 'price': '$189.77',
+ 'symbol': 'EGLD'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(844, MKR, $3,218,338,247)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,218,338,247',
+ 'name': 'Maker',
+ 'price': '$3,233.73',
+ 'symbol': 'MKR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(845, DASH, $3,186,685,213)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,186,685,213',
+ 'name': 'Dash',
+ 'price': '$316.00',
+ 'symbol': 'DASH'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(846, HT, $3,108,808,468)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,108,808,468',
+ 'name': 'Huobi Token',
+ 'price': '$17.45',
+ 'symbol': 'HT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(847, BTCB, $3,062,462,498)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,062,462,498',
+ 'name': 'Bitcoin BEP2',
+ 'price': '$56,091.09',
+ 'symbol': 'BTCB'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(848, CHZ, $3,066,496,155)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$3,066,496,155',
+ 'name': 'Chiliz',
+ 'price': '$0.5489',
+ 'symbol': 'CHZ'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(849, ZEC, $2,994,342,569)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,994,342,569',
+ 'name': 'Zcash',
+ 'price': '$258.49',
+ 'symbol': 'ZEC'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(850, DCR, $2,881,621,580)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,881,621,580',
+ 'name': 'Decred',
+ 'price': '$224.51',
+ 'symbol': 'DCR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(851, HOT, $2,888,475,858)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,888,475,858',
+ 'name': 'Holo',
+ 'price': '$0.01708',
+ 'symbol': 'HOT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(852, COMP, $2,469,812,706)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,469,812,706',
+ 'name': 'Compound',
+ 'price': '$486.59',
+ 'symbol': 'COMP'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(853, HBAR, $2,466,576,132)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,466,576,132',
+ 'name': 'Hedera Hashgraph',
+ 'price': '$0.3115',
+ 'symbol': 'HBAR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(854, ENJ, $2,248,324,716)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,248,324,716',
+ 'name': 'Enjin Coin',
+ 'price': '$2.69',
+ 'symbol': 'ENJ'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(855, ZIL, $2,256,649,681)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,256,649,681',
+ 'name': 'Zilliqa',
+ 'price': '$0.2017',
+ 'symbol': 'ZIL'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(856, SC, $2,263,807,263)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,263,807,263',
+ 'name': 'Siacoin',
+ 'price': '$0.04761',
+ 'symbol': 'SC'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(857, LEO, $2,159,007,611)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,159,007,611',
+ 'name': 'UNUS SED LEO',
+ 'price': '$2.16',
+ 'symbol': 'LEO'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(858, STX, $2,150,922,675)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,150,922,675',
+ 'name': 'Stacks',
+ 'price': '$1.98',
+ 'symbol': 'STX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(859, GRT, $2,123,358,362)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,123,358,362',
+ 'name': 'The Graph',
+ 'price': '$1.70',
+ 'symbol': 'GRT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(860, MANA, $2,130,120,914)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,130,120,914',
+ 'name': 'Decentraland',
+ 'price': '$1.35',
+ 'symbol': 'MANA'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(861, SNX, $2,068,145,547)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,068,145,547',
+ 'name': 'Synthetix',
+ 'price': '$18.01',
+ 'symbol': 'SNX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(862, UMA, $1,973,541,592)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,973,541,592',
+ 'name': 'UMA',
+ 'price': '$32.85',
+ 'symbol': 'UMA'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(863, NEXO, $1,991,778,983)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,991,778,983',
+ 'name': 'Nexo',
+ 'price': '$3.56',
+ 'symbol': 'NEXO'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(864, BAT, $2,010,191,539)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$2,010,191,539',
+ 'name': 'Basic Attention Token',
+ 'price': '$1.35',
+ 'symbol': 'BAT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(865, YFI, $1,946,873,124)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,946,873,124',
+ 'name': 'yearn.finance',
+ 'price': '$53,142.52',
+ 'symbol': 'YFI'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(866, MATIC, $1,882,869,673)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,882,869,673',
+ 'name': 'Polygon',
+ 'price': '$0.3629',
+ 'symbol': 'MATIC'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(867, DGB, $1,895,370,968)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,895,370,968',
+ 'name': 'DigiByte',
+ 'price': '$0.1332',
+ 'symbol': 'DGB'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(868, ONT, $1,892,323,565)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,892,323,565',
+ 'name': 'Ontology',
+ 'price': '$2.34',
+ 'symbol': 'ONT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(869, UST, $1,802,137,212)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,802,137,212',
+ 'name': 'TerraUSD',
+ 'price': '$0.9963',
+ 'symbol': 'UST'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(870, NEAR, $1,816,428,651)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,816,428,651',
+ 'name': 'NEAR Protocol',
+ 'price': '$5.15',
+ 'symbol': 'NEAR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(871, QTUM, $1,789,286,706)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,789,286,706',
+ 'name': 'Qtum',
+ 'price': '$18.20',
+ 'symbol': 'QTUM'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(872, SUSHI, $1,786,149,240)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,786,149,240',
+ 'name': 'SushiSwap',
+ 'price': '$14.04',
+ 'symbol': 'SUSHI'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(873, RVN, $1,683,133,338)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,683,133,338',
+ 'name': 'Ravencoin',
+ 'price': '$0.196',
+ 'symbol': 'RVN'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(874, TFUEL, $1,673,736,267)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,673,736,267',
+ 'name': 'Theta Fuel',
+ 'price': '$0.3176',
+ 'symbol': 'TFUEL'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(875, BTG, $1,656,418,578)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,656,418,578',
+ 'name': 'Bitcoin Gold',
+ 'price': '$94.58',
+ 'symbol': 'BTG'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(876, NANO, $1,523,785,966)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,523,785,966',
+ 'name': 'Nano',
+ 'price': '$11.44',
+ 'symbol': 'NANO'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(877, CEL, $1,518,380,624)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,518,380,624',
+ 'name': 'Celsius',
+ 'price': '$6.36',
+ 'symbol': 'CEL'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(878, WAVES, $1,424,422,563)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,424,422,563',
+ 'name': 'Waves',
+ 'price': '$13.58',
+ 'symbol': 'WAVES'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(879, ICX, $1,405,240,666)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,405,240,666',
+ 'name': 'ICON',
+ 'price': '$2.35',
+ 'symbol': 'ICX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(880, ZRX, $1,370,012,485)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,370,012,485',
+ 'name': '0x',
+ 'price': '$1.75',
+ 'symbol': 'ZRX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(881, IOST, $1,286,787,478)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,286,787,478',
+ 'name': 'IOST',
+ 'price': '$0.07859',
+ 'symbol': 'IOST'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(882, HNT, $1,266,804,113)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,266,804,113',
+ 'name': 'Helium',
+ 'price': '$16.00',
+ 'symbol': 'HNT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(883, BNT, $1,248,591,495)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,248,591,495',
+ 'name': 'Bancor',
+ 'price': '$7.01',
+ 'symbol': 'BNT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(884, RSR, $1,246,001,592)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,246,001,592',
+ 'name': 'Reserve Rights',
+ 'price': '$0.09468',
+ 'symbol': 'RSR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(885, ONE, $1,209,644,702)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,209,644,702',
+ 'name': 'Harmony',
+ 'price': '$0.1286',
+ 'symbol': 'ONE'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(886, ZEN, $1,205,790,980)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,205,790,980',
+ 'name': 'Horizen',
+ 'price': '$109.73',
+ 'symbol': 'ZEN'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(887, OMG, $1,181,427,500)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,181,427,500',
+ 'name': 'OMG Network',
+ 'price': '$8.42',
+ 'symbol': 'OMG'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(888, ANKR, $1,159,458,507)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,159,458,507',
+ 'name': 'Ankr',
+ 'price': '$0.1657',
+ 'symbol': 'ANKR'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(889, KCS, $1,121,656,938)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,121,656,938',
+ 'name': 'KuCoin Token',
+ 'price': '$14.00',
+ 'symbol': 'KCS'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(890, FLOW, $1,106,385,060)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,106,385,060',
+ 'name': 'Flow',
+ 'price': '$32.57',
+ 'symbol': 'FLOW'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(891, REV, $1,103,536,815)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,103,536,815',
+ 'name': 'Revain',
+ 'price': '$0.01297',
+ 'symbol': 'REV'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(892, NPXS, $1,067,754,467)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,067,754,467',
+ 'name': 'Pundi X[old]',
+ 'price': '$0.004306',
+ 'symbol': 'NPXS'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(893, FTM, $1,074,316,438)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,074,316,438',
+ 'name': 'Fantom',
+ 'price': '$0.4221',
+ 'symbol': 'FTM'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(894, OKB, $1,050,805,695)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$1,050,805,695',
+ 'name': 'OKB',
+ 'price': '$17.51',
+ 'symbol': 'OKB'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(895, CHSB, $972,337,140)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$972,337,140',
+ 'name': 'SwissBorg',
+ 'price': '$0.9723',
+ 'symbol': 'CHSB'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(896, REN, $957,926,264)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$957,926,264',
+ 'name': 'Ren',
+ 'price': '$0.9607',
+ 'symbol': 'REN'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(897, DENT, $949,130,181)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$949,130,181',
+ 'name': 'Dent',
+ 'price': '$0.01009',
+ 'symbol': 'DENT'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(898, XVG, $929,195,485)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$929,195,485',
+ 'name': 'Verge',
+ 'price': '$0.0565',
+ 'symbol': 'XVG'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(899, VGX, $920,517,171)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$920,517,171',
+ 'name': 'Voyager Token',
+ 'price': '$4.14',
+ 'symbol': 'VGX'}
+2021-04-24 21:06:36 [currency_analyzer.pipelines] INFO: Item <Currency(900, PAX, $877,070,572)> stored in db
+2021-04-24 21:06:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210418/>
+{'date': '20210418',
+ 'market_cap': '$877,070,572',
+ 'name': 'Paxos Standard',
+ 'price': '$0.998',
+ 'symbol': 'PAX'}
+2021-04-24 21:06:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coinmarketcap.com/historical/20210411/> (referer: https://coinmarketcap.com/)
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(901, BTC, $1,124,635,848,775)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,124,635,848,775',
+ 'name': 'Bitcoin',
+ 'price': '$60,204.96',
+ 'symbol': 'BTC'}
+2021-04-24 21:07:02 [scrapy.extensions.logstats] INFO: Crawled 4 pages (at 4 pages/min), scraped 201 items (at 201 items/min)
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(902, ETH, $249,059,103,192)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$249,059,103,192',
+ 'name': 'Ethereum',
+ 'price': '$2,157.66',
+ 'symbol': 'ETH'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(903, BNB, $81,189,295,175)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$81,189,295,175',
+ 'name': 'Binance Coin',
+ 'price': '$525.39',
+ 'symbol': 'BNB'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(904, XRP, $61,773,544,985)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$61,773,544,985',
+ 'name': 'XRP',
+ 'price': '$1.36',
+ 'symbol': 'XRP'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(905, USDT, $44,521,618,210)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$44,521,618,210',
+ 'name': 'Tether',
+ 'price': '$1.00',
+ 'symbol': 'USDT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(906, ADA, $40,470,031,448)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$40,470,031,448',
+ 'name': 'Cardano',
+ 'price': '$1.27',
+ 'symbol': 'ADA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(907, DOT, $38,470,489,157)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$38,470,489,157',
+ 'name': 'Polkadot',
+ 'price': '$41.42',
+ 'symbol': 'DOT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(908, LTC, $16,930,713,065)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$16,930,713,065',
+ 'name': 'Litecoin',
+ 'price': '$253.63',
+ 'symbol': 'LTC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(909, UNI, $15,689,099,388)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$15,689,099,388',
+ 'name': 'Uniswap',
+ 'price': '$29.98',
+ 'symbol': 'UNI'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(910, LINK, $14,212,461,608)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$14,212,461,608',
+ 'name': 'Chainlink',
+ 'price': '$33.92',
+ 'symbol': 'LINK'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(911, XLM, $13,432,941,770)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$13,432,941,770',
+ 'name': 'Stellar',
+ 'price': '$0.5888',
+ 'symbol': 'XLM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(912, BCH, $13,030,518,063)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$13,030,518,063',
+ 'name': 'Bitcoin Cash',
+ 'price': '$696.61',
+ 'symbol': 'BCH'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(913, THETA, $12,226,852,813)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$12,226,852,813',
+ 'name': 'THETA',
+ 'price': '$12.23',
+ 'symbol': 'THETA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(914, FIL, $11,800,831,100)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$11,800,831,100',
+ 'name': 'Filecoin',
+ 'price': '$179.18',
+ 'symbol': 'FIL'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(915, USDC, $11,065,073,074)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$11,065,073,074',
+ 'name': 'USD Coin',
+ 'price': '$1.00',
+ 'symbol': 'USDC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(916, DOGE, $9,640,258,366)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$9,640,258,366',
+ 'name': 'Dogecoin',
+ 'price': '$0.07465',
+ 'symbol': 'DOGE'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(917, VET, $8,987,613,626)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$8,987,613,626',
+ 'name': 'VeChain',
+ 'price': '$0.1397',
+ 'symbol': 'VET'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(918, WBTC, $8,779,619,597)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$8,779,619,597',
+ 'name': 'Wrapped Bitcoin',
+ 'price': '$60,154.70',
+ 'symbol': 'WBTC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(919, TRX, $8,767,748,386)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$8,767,748,386',
+ 'name': 'TRON',
+ 'price': '$0.1224',
+ 'symbol': 'TRX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(920, SOL, $7,542,139,623)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$7,542,139,623',
+ 'name': 'Solana',
+ 'price': '$27.93',
+ 'symbol': 'SOL'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(921, KLAY, $7,442,466,414)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$7,442,466,414',
+ 'name': 'Klaytn',
+ 'price': '$3.04',
+ 'symbol': 'KLAY'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(922, EOS, $6,423,407,250)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$6,423,407,250',
+ 'name': 'EOS',
+ 'price': '$6.74',
+ 'symbol': 'EOS'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(923, XMR, $5,853,259,799)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,853,259,799',
+ 'name': 'Monero',
+ 'price': '$327.32',
+ 'symbol': 'XMR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(924, MIOTA, $5,836,985,388)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,836,985,388',
+ 'name': 'IOTA',
+ 'price': '$2.10',
+ 'symbol': 'MIOTA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(925, LUNA, $5,791,503,914)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,791,503,914',
+ 'name': 'Terra',
+ 'price': '$15.14',
+ 'symbol': 'LUNA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(926, BTT, $5,577,749,383)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,577,749,383',
+ 'name': 'BitTorrent',
+ 'price': '$0.008452',
+ 'symbol': 'BTT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(927, CRO, $5,393,295,080)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,393,295,080',
+ 'name': 'Crypto.com Coin',
+ 'price': '$0.2135',
+ 'symbol': 'CRO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(928, BSV, $5,180,001,589)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,180,001,589',
+ 'name': 'Bitcoin SV',
+ 'price': '$276.96',
+ 'symbol': 'BSV'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(929, BUSD, $5,034,841,990)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$5,034,841,990',
+ 'name': 'Binance USD',
+ 'price': '$1.00',
+ 'symbol': 'BUSD'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(930, ATOM, $4,949,405,013)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,949,405,013',
+ 'name': 'Cosmos',
+ 'price': '$23.35',
+ 'symbol': 'ATOM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(931, XTZ, $4,956,966,741)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,956,966,741',
+ 'name': 'Tezos',
+ 'price': '$6.47',
+ 'symbol': 'XTZ'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(932, FTT, $4,853,279,527)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,853,279,527',
+ 'name': 'FTX Token',
+ 'price': '$51.44',
+ 'symbol': 'FTT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(933, AAVE, $4,660,263,686)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,660,263,686',
+ 'name': 'Aave',
+ 'price': '$373.38',
+ 'symbol': 'AAVE'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(934, NEO, $4,522,538,584)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,522,538,584',
+ 'name': 'Neo',
+ 'price': '$64.11',
+ 'symbol': 'NEO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(935, EGLD, $4,136,301,420)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,136,301,420',
+ 'name': 'Elrond',
+ 'price': '$239.24',
+ 'symbol': 'EGLD'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(936, ALGO, $4,102,251,115)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,102,251,115',
+ 'name': 'Algorand',
+ 'price': '$1.52',
+ 'symbol': 'ALGO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(937, AVAX, $4,062,600,654)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,062,600,654',
+ 'name': 'Avalanche',
+ 'price': '$31.60',
+ 'symbol': 'AVAX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(938, CAKE, $4,032,956,557)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$4,032,956,557',
+ 'name': 'PancakeSwap',
+ 'price': '$26.25',
+ 'symbol': 'CAKE'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(939, XEM, $3,988,865,764)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$3,988,865,764',
+ 'name': 'NEM',
+ 'price': '$0.4432',
+ 'symbol': 'XEM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(940, KSM, $3,721,533,161)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$3,721,533,161',
+ 'name': 'Kusama',
+ 'price': '$439.37',
+ 'symbol': 'KSM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(941, HT, $3,691,208,781)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$3,691,208,781',
+ 'name': 'Huobi Token',
+ 'price': '$20.19',
+ 'symbol': 'HT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(942, HOT, $3,346,849,682)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$3,346,849,682',
+ 'name': 'Holo',
+ 'price': '$0.01978',
+ 'symbol': 'HOT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(943, DAI, $3,283,427,603)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$3,283,427,603',
+ 'name': 'Dai',
+ 'price': '$1.00',
+ 'symbol': 'DAI'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(944, BTCB, $2,946,997,571)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,946,997,571',
+ 'name': 'Bitcoin BEP2',
+ 'price': '$60,464.35',
+ 'symbol': 'BTCB'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(945, DASH, $2,900,031,983)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,900,031,983',
+ 'name': 'Dash',
+ 'price': '$287.89',
+ 'symbol': 'DASH'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(946, HBAR, $2,764,417,246)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,764,417,246',
+ 'name': 'Hedera Hashgraph',
+ 'price': '$0.3492',
+ 'symbol': 'HBAR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(947, ENJ, $2,612,043,251)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,612,043,251',
+ 'name': 'Enjin Coin',
+ 'price': '$3.13',
+ 'symbol': 'ENJ'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(948, ZEC, $2,573,019,493)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,573,019,493',
+ 'name': 'Zcash',
+ 'price': '$223.08',
+ 'symbol': 'ZEC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(949, CHZ, $2,604,159,267)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,604,159,267',
+ 'name': 'Chiliz',
+ 'price': '$0.4662',
+ 'symbol': 'CHZ'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(950, DCR, $2,521,411,773)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,521,411,773',
+ 'name': 'Decred',
+ 'price': '$196.83',
+ 'symbol': 'DCR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(951, RUNE, $2,560,605,012)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,560,605,012',
+ 'name': 'THORChain',
+ 'price': '$11.06',
+ 'symbol': 'RUNE'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(952, GRT, $2,374,630,024)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,374,630,024',
+ 'name': 'The Graph',
+ 'price': '$1.91',
+ 'symbol': 'GRT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(953, ETC, $2,376,708,956)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,376,708,956',
+ 'name': 'Ethereum Classic',
+ 'price': '$20.43',
+ 'symbol': 'ETC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(954, NEAR, $2,348,074,234)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,348,074,234',
+ 'name': 'NEAR Protocol',
+ 'price': '$6.78',
+ 'symbol': 'NEAR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(955, COMP, $2,335,981,220)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,335,981,220',
+ 'name': 'Compound',
+ 'price': '$461.15',
+ 'symbol': 'COMP'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(956, ZIL, $2,292,304,139)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,292,304,139',
+ 'name': 'Zilliqa',
+ 'price': '$0.2054',
+ 'symbol': 'ZIL'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(957, MKR, $2,266,646,174)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,266,646,174',
+ 'name': 'Maker',
+ 'price': '$2,277.49',
+ 'symbol': 'MKR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(958, BTG, $2,176,443,785)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,176,443,785',
+ 'name': 'Bitcoin Gold',
+ 'price': '$124.27',
+ 'symbol': 'BTG'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(959, SNX, $2,186,769,423)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,186,769,423',
+ 'name': 'Synthetix',
+ 'price': '$19.04',
+ 'symbol': 'SNX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(960, BAT, $2,156,639,609)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,156,639,609',
+ 'name': 'Basic Attention Token',
+ 'price': '$1.44',
+ 'symbol': 'BAT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(961, LEO, $2,114,451,952)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,114,451,952',
+ 'name': 'UNUS SED LEO',
+ 'price': '$2.12',
+ 'symbol': 'LEO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(962, STX, $2,043,847,229)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$2,043,847,229',
+ 'name': 'Stacks',
+ 'price': '$1.88',
+ 'symbol': 'STX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(963, MATIC, $1,866,885,295)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,866,885,295',
+ 'name': 'Polygon',
+ 'price': '$0.3705',
+ 'symbol': 'MATIC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(964, TFUEL, $1,875,169,970)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,875,169,970',
+ 'name': 'Theta Fuel',
+ 'price': '$0.3558',
+ 'symbol': 'TFUEL'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(965, SUSHI, $1,808,419,512)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,808,419,512',
+ 'name': 'SushiSwap',
+ 'price': '$14.21',
+ 'symbol': 'SUSHI'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(966, UST, $1,752,065,806)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,752,065,806',
+ 'name': 'TerraUSD',
+ 'price': '$1.00',
+ 'symbol': 'UST'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(967, CEL, $1,690,000,793)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,690,000,793',
+ 'name': 'Celsius',
+ 'price': '$7.08',
+ 'symbol': 'CEL'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(968, MANA, $1,705,190,737)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,705,190,737',
+ 'name': 'Decentraland',
+ 'price': '$1.08',
+ 'symbol': 'MANA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(969, ZRX, $1,669,923,507)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,669,923,507',
+ 'name': '0x',
+ 'price': '$2.14',
+ 'symbol': 'ZRX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(970, YFI, $1,653,235,840)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,653,235,840',
+ 'name': 'yearn.finance',
+ 'price': '$45,127.30',
+ 'symbol': 'YFI'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(971, NEXO, $1,648,027,391)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,648,027,391',
+ 'name': 'Nexo',
+ 'price': '$2.94',
+ 'symbol': 'NEXO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(972, WAVES, $1,640,203,137)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,640,203,137',
+ 'name': 'Waves',
+ 'price': '$15.65',
+ 'symbol': 'WAVES'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(973, UMA, $1,630,868,375)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,630,868,375',
+ 'name': 'UMA',
+ 'price': '$27.16',
+ 'symbol': 'UMA'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(974, RVN, $1,597,918,833)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,597,918,833',
+ 'name': 'Ravencoin',
+ 'price': '$0.1872',
+ 'symbol': 'RVN'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(975, ONT, $1,600,215,394)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,600,215,394',
+ 'name': 'Ontology',
+ 'price': '$1.98',
+ 'symbol': 'ONT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(976, ICX, $1,540,205,107)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,540,205,107',
+ 'name': 'ICON',
+ 'price': '$2.58',
+ 'symbol': 'ICX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(977, KCS, $1,504,595,172)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,504,595,172',
+ 'name': 'KuCoin Token',
+ 'price': '$18.78',
+ 'symbol': 'KCS'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(978, QTUM, $1,475,113,221)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,475,113,221',
+ 'name': 'Qtum',
+ 'price': '$15.01',
+ 'symbol': 'QTUM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(979, OMG, $1,356,886,656)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,356,886,656',
+ 'name': 'OMG Network',
+ 'price': '$9.68',
+ 'symbol': 'OMG'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(980, ONE, $1,344,858,596)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,344,858,596',
+ 'name': 'Harmony',
+ 'price': '$0.1431',
+ 'symbol': 'ONE'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(981, HNT, $1,336,314,226)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,336,314,226',
+ 'name': 'Helium',
+ 'price': '$17.09',
+ 'symbol': 'HNT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(982, OKB, $1,329,910,201)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,329,910,201',
+ 'name': 'OKB',
+ 'price': '$22.17',
+ 'symbol': 'OKB'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(983, DENT, $1,327,595,888)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,327,595,888',
+ 'name': 'Dent',
+ 'price': '$0.01412',
+ 'symbol': 'DENT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(984, SC, $1,318,319,373)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,318,319,373',
+ 'name': 'Siacoin',
+ 'price': '$0.02774',
+ 'symbol': 'SC'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(985, BNT, $1,270,679,458)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,270,679,458',
+ 'name': 'Bancor',
+ 'price': '$7.10',
+ 'symbol': 'BNT'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(986, DGB, $1,250,867,794)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,250,867,794',
+ 'name': 'DigiByte',
+ 'price': '$0.08803',
+ 'symbol': 'DGB'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(987, FTM, $1,168,128,206)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,168,128,206',
+ 'name': 'Fantom',
+ 'price': '$0.459',
+ 'symbol': 'FTM'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(988, FLOW, $1,149,632,466)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,149,632,466',
+ 'name': 'Flow',
+ 'price': '$33.84',
+ 'symbol': 'FLOW'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(989, NPXS, $1,136,626,711)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,136,626,711',
+ 'name': 'Pundi X[old]',
+ 'price': '$0.004801',
+ 'symbol': 'NPXS'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(990, RSR, $1,137,499,832)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,137,499,832',
+ 'name': 'Reserve Rights',
+ 'price': '$0.08644',
+ 'symbol': 'RSR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(991, VGX, $1,116,957,001)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,116,957,001',
+ 'name': 'Voyager Token',
+ 'price': '$5.02',
+ 'symbol': 'VGX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(992, REV, $1,099,639,331)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,099,639,331',
+ 'name': 'Revain',
+ 'price': '$0.01293',
+ 'symbol': 'REV'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(993, CHSB, $1,061,271,432)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,061,271,432',
+ 'name': 'SwissBorg',
+ 'price': '$1.06',
+ 'symbol': 'CHSB'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(994, REN, $1,044,812,543)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,044,812,543',
+ 'name': 'Ren',
+ 'price': '$1.05',
+ 'symbol': 'REN'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(995, ANKR, $1,029,747,913)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$1,029,747,913',
+ 'name': 'Ankr',
+ 'price': '$0.1472',
+ 'symbol': 'ANKR'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(996, CFX, $991,319,201)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$991,319,201',
+ 'name': 'Conflux Network',
+ 'price': '$1.21',
+ 'symbol': 'CFX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(997, CELO, $961,308,116)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$961,308,116',
+ 'name': 'Celo',
+ 'price': '$4.69',
+ 'symbol': 'CELO'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(998, IOST, $937,852,606)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$937,852,606',
+ 'name': 'IOST',
+ 'price': '$0.05728',
+ 'symbol': 'IOST'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(999, BTMX, $929,178,160)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$929,178,160',
+ 'name': 'BTMX',
+ 'price': '$1.24',
+ 'symbol': 'BTMX'}
+2021-04-24 21:07:02 [currency_analyzer.pipelines] INFO: Item <Currency(1000, AR, $930,459,899)> stored in db
+2021-04-24 21:07:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://coinmarketcap.com/historical/20210411/>
+{'date': '20210411',
+ 'market_cap': '$930,459,899',
+ 'name': 'Arweave',
+ 'price': '$27.86',
+ 'symbol': 'AR'}
+2021-04-24 21:07:02 [scrapy.core.engine] INFO: Closing spider (finished)
+2021-04-24 21:07:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 982,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 271615,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 4,
+ 'elapsed_time_seconds': 61.718574,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 4, 24, 18, 7, 2, 983511),
+ 'httpcompression/response_bytes': 2722639,
+ 'httpcompression/response_count': 4,
+ 'item_scraped_count': 300,
+ 'log_count/DEBUG': 304,
+ 'log_count/INFO': 311,
+ 'memusage/max': 160296960,
+ 'memusage/startup': 108347392,
+ 'request_depth_max': 1,
+ 'response_received_count': 4,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2021, 4, 24, 18, 6, 1, 264937)}
+2021-04-24 21:07:02 [scrapy.core.engine] INFO: Spider closed (finished)

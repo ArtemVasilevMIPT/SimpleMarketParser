@@ -1,10 +1,8 @@
-from scrapy import Request
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from scrapy.loader.processors import Join
 from scrapy.loader import ItemLoader
 from scrapy.selector import Selector
-from currency_analyzer.currency_analyzer.items import CurrencyAnalyzerItem
+from currency_analyzer.items import CurrencyAnalyzerItem
 
 
 class CurrencyLoader(ItemLoader):
@@ -19,7 +17,7 @@ class CurrencySpider(CrawlSpider):
     regex = ""
 
     rules = (
-        Rule(LinkExtractor(allow=('/202104[0-9]{2}', )), callback='parse_data', follow=False),
+        Rule(LinkExtractor(allow=('20210404', )), callback='parse_data', follow=False),
     )
 
     @classmethod
@@ -45,7 +43,6 @@ class CurrencySpider(CrawlSpider):
             '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right cmc-table__cell--sort-by__market-cap"]//p/text()').extract()
         item_prices = items_html.xpath(
             '//td[@class="cmc-table__cell cmc-table__cell--sortable cmc-table__cell--right cmc-table__cell--sort-by__price"]//a/text()').extract()
-        print(response.request.url)
         for i in range(min(self.items_number, len(item_names))):
             item = CurrencyAnalyzerItem()
             item['date'] = response.request.url.split('/')[-2]
