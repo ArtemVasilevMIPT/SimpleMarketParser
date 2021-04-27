@@ -5,6 +5,7 @@ from flask import render_template
 import datetime
 import calendar
 from update_database import update_database
+from currency_analyzer.pipelines import Currency
 
 
 def get_closest_date(d):
@@ -57,15 +58,17 @@ def query_pandas(db, q="SELECT * FROM currency"):
     return pd.read_sql_query(q, db)
 
 
-def query_list(db, q="SELECT * FROM currency"):
+def query_list(db, q=""):
     """returns result of query q to database db in a form of a list"""
     if q == "":
         return []
-    frame = query_pandas(db, q)
+    res = db.query(Currency).filter_by(date=q).all()
+
     currency_list = []
-    for index, item in frame.iterrows():
-        currency_list.append((item['id'], item['date'], item['name'], item['symbol'],
-                              item['market_cap'], item['price']))
+
+    for ind, date, name, s, mc, p in res:
+        currency_list.append((id, date, name, s,mc, p))
+
     return currency_list
 
 
@@ -92,10 +95,10 @@ def init_database(con):
 
 
 def init_dates(con):
-    df = query_pandas(con)
-    res = df.date.unique()
-    for i in range(len(res)):
-        res[i] = ''.join(res[i].split('-'))
+    q = con.query(Currency.date).distinct(Currency.date).all()
+    res = []
+    for d in q:
+        res += [d[0].strftime("%Y%m%d")]
     return res
 
 
@@ -108,7 +111,7 @@ def check_date(date):
     return True
 
 
-def generate_query(time_period, ex_date):
+def generate_query(db, time_period, ex_date):
     """Generates query, according to the give time period"""
     r = ""
     q = ""
@@ -120,8 +123,10 @@ def generate_query(time_period, ex_date):
         set_search_date(r)
         update_database()
     s_f = get_closest_date(datetime.date(int(time_period[0]), int(time_period[1]), int(time_period[2])))
-    s = "'"
-    s += s_f.strftime('%Y-%m-%d')
-    s += "'"
-    q = "SELECT * FROM currency WHERE [date] == " + s
-    return q
+    s = s_f.strftime('%Y-%m-%d')
+    res = db.query(Currency.id, Currency.date, Currency.name, Currency.symbol, Currency.market_cap, Currency.price)\
+        .filter_by(date=s).all()
+    currency_list = []
+    for ind, date, name, s, mc, p in res:
+        currency_list.append((id, date, name, s, mc, p))
+    return currency_list
