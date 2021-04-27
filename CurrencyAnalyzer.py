@@ -53,11 +53,6 @@ def set_search_number(new_number):
         spider.CurrencySpider.set_items_number(new_number)
 
 
-def query_pandas(db, q="SELECT * FROM currency"):
-    """returns result of query q to database db in a form of pandas dataframe"""
-    return pd.read_sql_query(q, db)
-
-
 def query_list(db, q=""):
     """returns result of query q to database db in a form of a list"""
     if q == "":

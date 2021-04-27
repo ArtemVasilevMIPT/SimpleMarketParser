@@ -14,6 +14,6 @@ def update_database():
         runner = CrawlerRunner(settings=sett)
         d = runner.crawl('CurrencySpider')
         d.addBoth(lambda _: reactor.stop())
-        reactor.run()
+        reactor.run(installSignalHandlers=0)
     except ValueError:
         print('Value error has been raised while parsing')
