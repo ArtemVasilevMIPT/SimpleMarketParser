@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency analyzer</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div>
+        <form action="/search" method="post" id="date_form">
+            <p>
+                Date:
+                <input name="YearFrom" type="text" value={{time_range[0]}} placeholder="YYYY">
+                <input name="MonthFrom" type="text" value={{time_range[1]}} placeholder="MM">
+                <input name="DayFrom" type="text" value={{time_range[2]}} placeholder="DD">
+            </p>
+            <p>
+                    <input type="submit" name="search" value="Search" id="inputdates">
+            </p>
+            <table align="center">
+            <caption>Таблица с информацией о криптовалютах</caption>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Market capacity</th>
+                <th>Price</th>
+            </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        <table align="center">
+            {% for item in cells %}
+            <tr>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td>{{item[5]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

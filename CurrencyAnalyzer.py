@@ -1,0 +1,127 @@
+import sqlite3
+import pandas as pd
+from currency_analyzer.spiders import spider
+from flask import render_template
+import datetime
+import calendar
+from update_database import update_database
+from currency_analyzer.pipelines import Currency
+
+
+def get_closest_date(d):
+    c = calendar.Calendar()
+    cd = c.monthdatescalendar(d.year, d.month)
+    dt = None
+    for week in cd:
+        if week[6].day >= d.day:
+            dt = week[6]
+            break
+    if not dt:
+        m = d.month + 1
+        day = 1
+        if m > 12:
+            cd = c.monthdatescalendar(d.year + 1, 1)
+        else:
+            cd = c.monthdatescalendar(d.year, m)
+        for week in cd:
+            if week[6].day >= day:
+                dt = week[6]
+                break
+    return dt
+
+
+def generate_regex(date_from, ex_dates):
+    try:
+        d = datetime.date(int(date_from[0]), int(date_from[1]), int(date_from[2]))
+    except ValueError:
+        return ""
+    dt = get_closest_date(d)
+    if dt.strftime("%Y%m%d") in ex_dates:
+        return ""
+    else:
+        ex_dates += [dt.strftime("%Y%m%d")]
+        return dt.strftime("%Y%m%d")
+
+
+def set_search_date(regex):
+    """Sets parsing regex"""
+    spider.CurrencySpider.set_rules(regex)
+
+
+def set_search_number(new_number):
+    if new_number > 0:
+        spider.CurrencySpider.set_items_number(new_number)
+
+
+def query_list(db, q=""):
+    """returns result of query q to database db in a form of a list"""
+    if q == "":
+        return []
+    res = db.query(Currency).filter_by(date=q).all()
+
+    currency_list = []
+
+    for ind, date, name, s, mc, p in res:
+        currency_list.append((id, date, name, s,mc, p))
+
+    return currency_list
+
+
+def render_query(db, q, dates):
+    """renders query on the html webpage"""
+    return render_template(
+        'main_page.html',
+        cells=query_list(db, q),
+        time_range=dates
+    )
+
+
+def connect_database():
+    """returns a connection to a database"""
+    c = sqlite3.connect('currency.sqlite')
+    return c
+
+
+def init_database(con):
+    """initializes a database"""
+    if not con:
+        con = connect_database()
+    return con
+
+
+def init_dates(con):
+    q = con.query(Currency.date).distinct(Currency.date).all()
+    res = []
+    for d in q:
+        res += [d[0].strftime("%Y%m%d")]
+    return res
+
+
+def check_date(date):
+    """Checks whether date is valid"""
+    try:
+        d = datetime.date(int(date[0]), int(date[1]), int(date[2]))
+    except ValueError:
+        return False
+    return True
+
+
+def generate_query(db, time_period, ex_date):
+    """Generates query, according to the give time period"""
+    r = ""
+    q = ""
+    if check_date(time_period):
+        r = generate_regex(time_period, ex_date)
+    else:
+        return ""
+    if r != "":
+        set_search_date(r)
+        update_database()
+    s_f = get_closest_date(datetime.date(int(time_period[0]), int(time_period[1]), int(time_period[2])))
+    s = s_f.strftime('%Y-%m-%d')
+    res = db.query(Currency.id, Currency.date, Currency.name, Currency.symbol, Currency.market_cap, Currency.price)\
+        .filter_by(date=s).all()
+    currency_list = []
+    for ind, date, name, s, mc, p in res:
+        currency_list.append((id, date, name, s, mc, p))
+    return currency_list
